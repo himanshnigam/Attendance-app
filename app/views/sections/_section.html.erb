@@ -1,0 +1,48 @@
+<div id="<%= dom_id section %>">
+  <p>
+    <strong>Student name:</strong>
+    <%= section.student_name %>
+  </p>
+
+  <p>
+    <strong>Student no:</strong>
+    <%= section.student_no %>
+  </p>
+
+  <p>
+    <strong>Number:</strong>
+    <%= section.number %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= section.email %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= section.address %>
+  </p>
+
+  <p>
+    <strong>Student Photo:</strong>
+    <% if section.student_photo.attached? %>
+      <%= image_tag section.student_photo, width: "200px" %>
+    <% else %>
+      No photo available
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Student Subjects:</strong>
+    <% if section.student_subjects.attached? %>
+      <% section.student_subjects.each do |subject| %>
+        <%= image_tag subject, width: "100px" %>
+      <% end %>
+    <% else %>
+      No subject available
+    <% end %>
+  </p>
+
+  
+</div>
